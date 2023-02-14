@@ -1,0 +1,78 @@
+site,species,ID,ind,infect,location
+VP,Ann,Dry,ANNDRY,NA,Ann's Meadow
+VP,Ann,H2O,ANNH2O,NA,Ann's Meadow
+VP,Ann,Muk,ANNMUK,NA,Ann's Meadow
+VP,Bog,Dry,BOGDRY,NA,Bog
+VP,Bog,H2O,BOGH2O,NA,Bog
+VP,Bog,Muk,BOGMUK,NA,Bog
+VP,Tun,Dry,TUNDRY,NA,Tunnel
+VP,Tun,H2O,TUNH2O,NA,Tunnel
+VP,Tun,Muk,TUNMUK,NA,Tunnel
+VP,VP,Dry,VPDRY,NA,Vernal Pool
+VP,GF,10,VPGF10,0,Vernal Pool
+VP,GF,11,VPGF11,0,Tunnel
+VP,GF,12,VPGF12,0,Tunnel
+VP,GF,15,VPGF15,0,Upstream
+VP,GF,16,VPGF16,0,Upstream
+VP,GF,18,VPGF18,0,Upstream
+VP,GF,2,VPGF2,0,Ann's Meadow
+VP,GF,3,VPGF3,0,Bog
+VP,GF,5,VPGF5,0,Bog
+VP,GF,7,VPGF7,0,Bog
+VP,GF,7B,VPGF7b,0,Vernal Pool
+VP,GF,9,VPGF9,0,Vernal Pool
+VP,VP,H2O,VPH2O,NA,Vernal Pool
+VP,VP,Muk,VPMUK,NA,Vernal Pool
+VP,PF,1,VPPF1,0,Ann's Meadow
+VP,PF,10,VPPF10,0,Ann's Meadow
+VP,PF,11,VPPF11,0,Bog
+VP,PF,12,VPPF12,1,Bog
+VP,PF,13,VPPF13,1,Tunnel
+VP,PF,15,VPPF15,0,Tunnel
+VP,PF,16,VPPF16,1,Tunnel
+VP,PF,16B,VPPF16b,1,Upstream
+VP,PF,17,VPPF17,1,Upstream
+VP,PF,18,VPPF18,1,Upstream
+VP,PF,19,VPPF19,1,Upstream
+VP,PF,2,VPPF2,1,Ann's Meadow
+VP,PF,20,VPPF20,1,Upstream
+VP,PF,21,VPPF21,0,Upstream
+VP,PF,22,VPPF22,0,Upstream
+VP,PF,23,VPPF23,0,Upstream
+VP,PF,24,VPPF24,0,Upstream
+VP,PF,25,VPPF25,1,Upstream
+VP,PF,3,VPPF3,1,Ann's Meadow
+VP,PF,4,VPPF4,0,Ann's Meadow
+VP,PF,5,VPPF5,0,Ann's Meadow
+VP,PF,6,VPPF6,0,Ann's Meadow
+VP,PF,7,VPPF7,1,Ann's Meadow
+VP,PF,9,VPPF9,0,Ann's Meadow
+VP,Tad,1,VPTAD1,0,Vernal Pool
+VP,Tad,12,VPTAD12,0,Vernal Pool
+VP,Tad,18,VPTAD18,0,Vernal Pool
+VP,Tad,20,VPTAD20,0,Vernal Pool
+VP,Tad,21,VPTAD21,0,Vernal Pool
+VP,Tad,22,VPTAD22,0,Vernal Pool
+VP,Tad,25,VPTAD25,0,Vernal Pool
+VP,Tad,34,VPTAD34,0,Vernal Pool
+VP,Tad,35,VPTAD35,0,Vernal Pool
+VP,Tad,38,VPTAD38,1,Vernal Pool
+VP,Tad,4,VPTAD4,0,Vernal Pool
+VP,Tad,40,VPTAD40,0,Vernal Pool
+VP,UP,Dry,VPUPDRY,NA,Upstream
+VP,UP,H2O,VPUPH2O,NA,Upstream
+VP,UP,Muk,VPUPMUK,NA,Upstream
+VP,WF,1,VPWF1,0,Ann's Meadow
+VP,WF,10,VPWF10,1,Upstream
+VP,WF,11,VPWF11,1,Ann's Meadow
+VP,WF,12,VPWF12,0,Upstream
+VP,WF,18,VPWF18,0,Upstream
+VP,WF,19,VPWF19,0,Upstream
+VP,WF,20,VPWF20,0,Upstream
+VP,WF,21,VPWF21,1,Upstream
+VP,WF,4,VPWF4,0,Tunnel
+VP,WF,5,VPWF5,1,Upstream
+VP,WF,6,VPWF6,0,Upstream
+VP,WF,7,VPWF7,0,Upstream
+VP,WF,8,VPWF8,0,Upstream
+VP,WF,9,VPWF9,0,Upstream

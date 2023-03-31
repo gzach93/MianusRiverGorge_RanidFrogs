@@ -105,13 +105,26 @@ perm_species_bray
 bray.perm.pair <- pairwise.adonis(asv.amph[,-c(1080:1082)], asv.amph$species)
 bray.perm.pair
 
-bray.perm.pair.site <- pairwise.adonis(asv.amph[,-c(1080:1082)], asv.amph$site)
+#Brary by site -- removed tadpoles and vernal pool
+bray.perm.site <- adonis2(asv.amph[-which(asv.amph$site == 'Vernal Pool'),-c(1080:1082)]~asv.amph[-which(asv.amph$site == 'Vernal Pool'), 'site'], method = 'bray', permutations = 999)
+bray.perm.site
+
+bray.perm.pair.site <- pairwise.adonis(asv.amph[-which(asv.amph$site == 'Vernal Pool'),-c(1080:1082)], asv.amph[-which(asv.amph$site == 'Vernal Pool'), 'site'])
 bray.perm.pair.site
 
 #Jaccard by species
 perm_species_jaccard <- adonis2(asv.amph[,-c(1080:1082)] ~ asv.amph$species, method = 'jaccard', permutations = 999, binary = T)
 perm_species_jaccard
 
+jaccard.perm.pair.species <- pairwise.adonis(asv.amph[,-c(1080:1082)], asv.amph[, 'site'])
+jaccard.perm.pair.site
+
+#Jaccard by site -- removed tadpoles and vernal pool
+jaccard.perm.site <- adonis2(asv.amph[-which(asv.amph$site == 'Vernal Pool'),-c(1080:1082)]~asv.amph[-which(asv.amph$site == 'Vernal Pool'), 'site'], method = 'jaccard', permutations = 999, binary = T)
+jaccard.perm.site
+
+jaccard.perm.pair.site <- pairwise.adonis(asv.amph[-which(asv.amph$site == 'Vernal Pool'),-c(1080:1082)], asv.amph[-which(asv.amph$site == 'Vernal Pool'), 'site'])
+jaccard.perm.pair.site
 
 
 #BETA DISPER MULTIVARIATE HOMOGENEITY OF DISPERSION
@@ -125,10 +138,28 @@ asv.amph.jac <-vegdist(asv.amph[,-c(1080:1082)], method = 'jaccard', binary = T)
 disp.species.jac <- betadisper(asv.amph.jac,asv.amph$species, type = "centroid")
 disp.species.jac
 
-#Check for differences in dispersion amoung groups
-permutest(disp.species.bray, permutations = 999) 
-permutest(disp.species.jac, permutations = 999) 
+#By site
+asv.site.bray <-vegdist(asv.amph[-which(asv.amph$site == 'Vernal Pool'),-c(1080:1082)], method = 'bray', binary = F)
+disp.site.bray <- betadisper(asv.site.bray,  asv.amph[-which(asv.amph$site == 'Vernal Pool'), 'site'], type = "centroid")
+disp.site.bray
 
+
+asv.site.jac <-vegdist(asv.amph[-which(asv.amph$site == 'Vernal Pool'),-c(1080:1082)], method = 'jaccard', binary = T)
+disp.site.jac <- betadisper(asv.site.jac,  asv.amph[-which(asv.amph$site == 'Vernal Pool'), 'site'], type = "centroid")
+disp.site.jac
+
+#Check for differences in dispersion amoung groups
+#Species/Lifestage
+permutest(disp.species.bray, permutations = 999, pairwise = FALSE) 
+permutest(disp.species.bray, permutations = 999, pairwise = TRUE) 
+
+
+permutest(disp.species.jac, permutations = 999, pairwise = FALSE) 
+permutest(disp.species.jac, permutations = 999, pairwise = TRUE) 
+
+#Site - vernal pool
+permutest(disp.site.bray, permutations = 999, pairwise = FALSE) 
+permutest(disp.site.jac, permutations = 999, pairwise = FALSE) 
 
 #Infection GLM
 alpha.pf <- alpha.amph[which(alpha.amph$species == 'PF'),]
@@ -143,11 +174,7 @@ inf.mod.rich <- glm(infection~observed_OTU, alpha.pf, family = 'binomial')
 summary(inf.mod.rich)
 
 
-
-
 frog.amph <- na.omit(frog)
-
-
 
 #Dominate Taxa
 new.asv <- asv
@@ -254,10 +281,6 @@ frog2 <-  frog[-which(frog$type == 'Environment'),]
 
 
 #Alpha Diversity GLMs
-faith.sp <- glm(faith~species, alpha.amph, family = Gamma)
-summary(faith.sp)
-emmeans(faith.sp, specs = pairwise~species)
-
 rich.sp <- glm.nb(observed_OTU~species, alpha.amph)
 summary(rich.sp)
 emmeans(rich.sp, specs = pairwise~species)
@@ -267,10 +290,6 @@ summary(shan.sp)
 emmeans(shan.sp, specs = pairwise~species)
 
 
-faith.site <- glm(faith~site, alpha.amph, family = Gamma)
-summary(faith.site)
-emmeans(faith.site, specs = pairwise~site)
-
 rich.site <- glm.nb(observed_OTU~site, alpha.amph)
 summary(rich.site)
 emmeans(rich.site, specs = pairwise~site)
@@ -279,7 +298,15 @@ shan.site <- glm(shannon~site, alpha.amph, family = Gamma)
 summary(shan.site)
 emmeans(shan.site, specs = pairwise~site)
 
+#Site Residual Models
+rich.site.res <- lm(rich.sp$residuals~alpha.amph$site, alpha.amph)
+summary(rich.site.res)
 
+shan.site.res <- lm(shan.sp$residuals~alpha.amph$site)
+summary(shan.site.res)
+
+#How are Species Distrupted Across Site 1 -- difference in subsites?
+table(alpha.amph$site, alpha.amph$species)
 
 
 #indicator species anaylsis -- what in tadpole samples is difference than adults amphibians

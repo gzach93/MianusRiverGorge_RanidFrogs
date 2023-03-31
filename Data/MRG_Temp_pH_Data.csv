@@ -1,0 +1,85 @@
+Year,Month,Day,Site,Location,Temperature,pH
+2017,June,1,Site 1,Vernal Pool,20.4,4.72
+2017,June,2,Site 2,Stream,19.1,6.9
+2017,June,3,Site 1,Vernal Pool,13.7,4.64
+2017,June,4,Site 2,Stream,15.8,7.21
+2017,June,4,Site 2,Stream,15.3,6.97
+2017,June,4,Site 1,Vernal Pool,16.1,4.9
+2017,June,4,Site 1,Vernal Pool,16.4,4.6
+2017,June,6,Site 1,Vernal Pool,11.4,4.67
+2017,June,6,Site 1,Vernal Pool,12.1,4.59
+2017,June,7,Site 1,Bog,15.7,7.3
+2017,June,7,Site 1,Ann's Meadow,14.9,7.11
+2017,June,7,Site 1,Upstream,15.7,7.06
+2017,June,13,Site 1,Ann's Meadow,23.5,6.92
+2017,June,13,Site 1,Bog,23.9,6.88
+2017,June,13,Site 1,Tunnel ,22.7,6.98
+2017,June,13,Site 1,Vernal Pool,24,4.51
+2017,June,13,Site 1,Vernal Pool,23.7,4.58
+2017,June,13,Site 1,Upstream,24.7,6.81
+2017,June,14,Site 2,Stream,17.8,7.04
+2017,June,14,Site 2,Stream,20.5,6.9
+2017,June,14,Site 2,Stream,20.6,7.19
+2017,June,15,Site 2,Stream,17.4,7.26
+2017,June,15,Site 2,Stream,19,7.01
+2017,June,15,Site 2,Stream,19.2,6.94
+2017,June,15,Site 2,Pond,21.7,7.19
+2017,June,16,Site 1,Vernal Pool,17.7,4.68
+2017,June,16,Site 1,Vernal Pool,17.5,4.63
+2017,June,16,Site 1,Vernal Pool,17.3,4.72
+2017,June,17,Site 2,Pond,19.3,6.59
+2017,June,17,Site 2,Pond,18.3,6.92
+2017,June,17,Site 2,Pond,19.4,6.87
+2017,June,19,Site 2,Pond,22.4,6.71
+2017,June,19,Site 2,Pond,22.8,6.95
+2017,June,19,Site 2,Private Pond,29.4,7.23
+2017,June,20,Site 2,Private Pond,23.8,7.23
+2017,June,20,Site 2,Private Pond ,24.2,7.14
+2017,June,20,Site 2,Pond,26.4,6.83
+2017,June,20,Site 2,Pond,24.3,7.23
+2017,June,20,Site 2,Stream,23,7.26
+2017,June,20,Site 2,Stream,22.7,7.28
+2017,June,20,Site 1,Vernal Pool,23.1,5.39
+2017,June,20,Site 1,Vernal Pool,22.8,4.81
+2017,June,20,Site 1,Vernal Pool,23.1,5.01
+2017,June,20,Site 1,Tunnel ,23.2,6.79
+2017,June,20,Site 1,Ann's Meadow,23.9,7.22
+2017,June,20,Site 1,Bog,22.7,7.28
+2017,June,20,Site 1,Upstream,24.2,7.39
+2018,June,9,Site 1,Vernal Pool,16.9,4.93
+2018,June,9,Site 1,Vernal Pool,16.9,4.66
+2018,June,9,Site 1,Vernal Pool,17.1,4.55
+2018,June,9,Site 3,Pond,18.8,5.51
+2018,June,9,Site 3,Pond,19.1,5.65
+2018,June,1,Site 1,Bog,18.9,7.16
+2018,June,1,Site 1,Ann's Meadow,16.8,7.27
+2018,June,1,Site 1,Tunnel ,16.2,7.37
+2018,June,1,Site 1,Vernal Pool,20,4.83
+2018,June,1,Site 1,Upstream,18.7,6.79
+2018,June,12,Site 3,Stream,16.3,6.97
+2018,June,12,Site 3,Stream,15.9,7.16
+2018,June,12,Site 2,Stream,16.4,7
+2018,June,12,Site 2,Stream,16.5,7.27
+2018,June,13,Site 1,Ann's Meadow,21.8,7.35
+2018,June,13,Site 1,Bog,17.8,7.14
+2018,June,13,Site 1,Tunnel ,17.8,7.16
+2018,June,14,Site 3,Stream,18.5,7.11
+2018,June,14,Site 2,Stream,20.5,7.35
+2018,June,14,Site 1,Upstream,22,7.32
+2018,June,15,Site 1,Vernal Pool,17.1,5.8
+2018,June,15,Site 1,Vernal Pool,15.9,5.04
+2018,June,15,Site 1,Vernal Pool,15.8,4.38
+2018,June,15,Site 3,Pond,16.3,5.38
+2018,June,15,Site 3,Pond,17.3,5.35
+2018,June,18,Site 1,Ann's Meadow,20.1,7.06
+2018,June,18,Site 1,Tunnel ,17.8,7.15
+2018,June,18,Site 1,Vernal Pool,27.9,4.85
+2018,June,18,Site 1,Upstream,20.1,6.78
+2018,June,19,Site 3,Stream,23.6,7.17
+2018,June,19,Site 3,Stream,23.2,7.01
+2018,June,21,Site 1,Vernal Pool,19.5,5.06
+2018,June,21,Site 1,Vernal Pool,19.1,4.45
+2018,June,21,Site 1,Vernal Pool,19.1,4.73
+2018,June,21,Site 3,Pond,17.3,5.62
+2018,June,21,Site 2,Stream,23.6,6.97
+2018,June,21,Site 2,Stream,21.6,7.19

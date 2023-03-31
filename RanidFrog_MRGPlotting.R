@@ -1,4 +1,4 @@
-source('RanidFrog_MRGAnalysis.R')
+#Run RanidFrog_MRGAnalysis Script First to Get All Data Objects
 
 #Bar Plot
 ggplot(melt.percent.fam[melt.percent.fam$variable %in% c("GF", "PF", "WF", "Tad"),], aes(fill=Group.1, y=variable, x=value)) + 
@@ -23,15 +23,15 @@ bray.plot <- ggplot() +
   theme_half_open(12) + 
   scale_shape_manual(values=c(1, 16)) +
   theme(
-    axis.title.x = element_text(size=axis.text.size),# remove x-axis labels
-    axis.title.y = element_text(size=axis.text.size),# remove y-axis labels
+    axis.title.x = element_text(size=16),# remove x-axis labels
+    axis.title.y = element_text(size=16),# remove y-axis labels
     panel.background = element_blank(), 
     panel.grid.major = element_blank(),#remove major-grid labels
     panel.grid.minor = element_blank(),#remove minor-grid labels
     plot.background = element_blank(),
     plot.margin = unit(c(.5, 0, 0, 0), "cm"),
-    legend.title = element_text(size = legend.title.size),
-    legend.text = element_text(size = legend.text.size)) +
+    legend.title = element_text(size = 16),
+    legend.text = element_text(size = 16)) +
   xlab('NMDS 1') + ylab('NMDS 2') + xlim(-2,2) + ylim(-1.5,2) + 
   labs(col="Amphibian", shape= NULL) + 
   guides(shape = FALSE, color = guide_legend(override.aes = list(shape = 1))); bray.plot
@@ -49,18 +49,18 @@ jac.plot <- ggplot() +
   theme_half_open(12) + 
   scale_shape_manual(values=c(1, 16)) +
   theme(
-    axis.title.x = element_text(size=axis.text.size),# remove x-axis labels
-    axis.title.y = element_text(size=axis.text.size),# remove y-axis labels
+    axis.title.x = element_text(size=16),# remove x-axis labels
+    axis.title.y = element_text(size=16),
     panel.background = element_blank(), 
     panel.grid.major = element_blank(),#remove major-grid labels
     panel.grid.minor = element_blank(),#remove minor-grid labels
     plot.background = element_blank(),
     plot.margin = unit(c(.5, 0, 0, 0), "cm"),
-    legend.title = element_text(size = legend.title.size),
-    legend.text = element_text(size = legend.text.size)) +
+    legend.title = element_text(size = 16),
+    legend.text = element_text(size = 16)) +
   xlab('NMDS 1') + ylab('') + xlim(-2,2) + ylim(-1.5,2) + 
   labs(col="Amphibian", shape= NULL) + 
-  guides(shape = FALSE, color = guide_legend(override.aes = list(shape = 16)));jac.plot
+  guides(shape = FALSE, color = guide_legend(override.aes = list(shape = 16))); jac.plot
 
 
 figure <- ggarrange(bray.plot, jac.plot,
@@ -199,8 +199,8 @@ Loc.plot <- ggplot() +
     panel.grid.minor = element_blank(),  #remove minor-grid labels
     plot.background = element_blank(),
     plot.margin = unit(c(.5, 0, 0, 0), "cm"),
-    legend.title = element_text(size = legend.title.size),
-    legend.text = element_text(size = legend.text.size)) +
+    legend.title = element_text(size = 16),
+    legend.text = element_text(size = 16)) +
   scale_shape_manual(breaks = c('Environment'),
                      values=c(1,16),
                      labels = c('Enviroment')) +
@@ -325,3 +325,46 @@ Loc.plot <- ggplot() +
                      values=c(1,16),
                      labels = c('Enviroment', 'Amphibian')) +
   xlab('NMDS 1') + ylab('NMDS 2') + xlim(-2,2) + ylim(-1.5,2) + labs(shape = 'Sample Type')  
+
+
+##############################################################
+############ Environment Data Supp Plots #####################
+##############################################################
+env.data <- read.csv('Data/MRG_Temp_pH_Data.csv')
+
+env.data$Site <- as.factor(env.data$Site)
+
+env.data %>%
+  group_by(Site) %>%
+  summarise(mean = mean (Temperature),
+            sd = sd(Temperature))
+
+mean(env.data$Temperature)
+sd(env.data$Temperature)
+
+temp.sites <- ggplot(env.data, aes(x = Site, y = Temperature)) +
+  geom_boxplot(outlier.shape=NA) + theme_classic() + labs(colour="Year") +
+  geom_point(data = env.data, aes(color = as.factor(Year)), position = "jitter") +
+  xlab('') + ylab(expression("Temperature " (~degree*C)));temp.sites
+
+temp.subsites <- ggplot(env.data[env.data$Site %in% 'Site 1',], aes(x = Location, y = Temperature)) +
+  geom_boxplot(outlier.shape=NA) + theme_classic() + geom_point(data = env.data[env.data$Site %in% 'Site 1',], aes(color = as.factor(Year)),position = "jitter") +
+  theme(axis.text.x=element_text(angle=45,hjust=1)) +
+  xlab('') + ylab(expression("Temperature " (~degree*C))) + labs(colour="Year");temp.subsites
+
+pH.sites <- ggplot(env.data, aes(x = Site, y = pH)) +
+  geom_boxplot(outlier.shape=NA) + theme_classic() + geom_point(data = env.data, aes(color = as.factor(Year)), position = "jitter") +
+  xlab('') + ylab("pH") + labs(colour="Year");pH.sites
+
+pH.subsites <- ggplot(env.data[env.data$Site %in% 'Site 1',], aes(x = Location, y = pH)) +
+  geom_boxplot(outlier.shape=NA) + theme_classic() + geom_point(data = env.data[env.data$Site %in% 'Site 1',], aes(color = as.factor(Year)), position = "jitter") +
+  xlab('') + ylab("pH") + theme(axis.text.x=element_text(angle=45,hjust=1)) + labs(colour="Year");pH.subsites
+
+
+ggarrange(temp.sites + rremove('legend'), pH.sites, labels = c("A", "B"),
+          common.legend = TRUE, legend = 'bottom')
+ggarrange(temp.subsites + rremove('legend'), pH.subsites, labels = c("A", "B"),
+          common.legend = TRUE, legend = 'bottom')
+
+
+

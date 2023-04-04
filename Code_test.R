@@ -32,8 +32,8 @@ asv$ID <- row.names(asv)
 otu_table(as.matrix(asv), taxa_are_rows = FALSE)
 
 
-test <- read.csv('~/Documents/2020_ZG18A_ASV_Qiime2/ZG18A_Final_TABLE_24May/feature-table.csv')
-taxa <- read.csv('~/Documents/2020_ZG18A_ASV_Qiime2/ZG18A_Final_TABLE_24May/feature-table.csv')
+taxa <- phytools::read.newick('~/Documents/2020_ZG18A_ASV_Qiime2/ZG18A_FINAL_TREE_24May/tree.nwk')
+#read.csv('~/Documents/2020_ZG18A_ASV_Qiime2/ZG18A_Final_TABLE_24May/feature-table.csv')
 
 test <- phyloseq(otu_table(test[,-1], taxa_are_rows = TRUE))
 
